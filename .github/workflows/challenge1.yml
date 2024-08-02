@@ -1,0 +1,27 @@
+name: "Fisrt challenge"
+
+on:
+    push
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Show date
+          run: date
+    job2:
+        runs-on: windows-latest
+        steps:
+            - name: Show date
+            run: Get-Date
+    job3:
+        runs-on: macos-latest
+        steps:
+        - name: Show date
+          run: date
+    job4:
+        runs-on: ubuntu-22.04
+        needs: [job1, job2, job3]
+        steps:
+        - name: Show date
+          run: date
